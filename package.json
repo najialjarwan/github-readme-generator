@@ -1,0 +1,21 @@
+{
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-readmes.js"
+  },
+  "name": "github-readme-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najialjarwan/github-readme-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/najialjarwan/github-readme-generator/issues"
+  },
+  "homepage": "https://github.com/najialjarwan/github-readme-generator#readme"
+}
