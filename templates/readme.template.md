@@ -4,7 +4,7 @@
 
 
 <h1 align="center">
-⭐ {{name}} • {{title}}
+⭐ <i>{{name}}</i> • {{title}}
 </h1>
 
 
