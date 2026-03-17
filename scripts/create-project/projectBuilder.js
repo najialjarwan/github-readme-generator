@@ -7,17 +7,19 @@ export const buildProjectObject = (answers) => {
     role,
     platform,
     status,
+    version,
     rank,
     duration,
     liveLink,
     gitLink,
     description,
+    motivation,
     thumbnail,
-    screenshots,
     techStack,
     keyFeatures,
-    challenges,
     futureImprovements,
+    credits,
+    notes,
     tags,
   } = answers;
 
@@ -29,21 +31,23 @@ export const buildProjectObject = (answers) => {
     ...(role && { role }),
     ...(platform && { platform }),
     ...(status && { status }),
+    ...(version && { version }),
     ...(rank && { rank }),
     ...(duration && { duration }),
     ...(liveLink && { liveLink }),
     ...(gitLink && { gitLink }),
     ...(description && { description }),
+    ...(motivation && { motivation }),
     ...(thumbnail && { thumbnail }),
-    screenshots: screenshots || [],
     ...(techStack?.length && {
       techStack: techStack.map((tech) =>
         tech.startsWith("TECHS_BY_TECH.") ? tech : `TECHS_BY_TECH.${tech}`
       ),
     }),
     ...(keyFeatures?.length && { keyFeatures }),
-    ...(challenges?.length && { challenges }),
     ...(futureImprovements?.length && { futureImprovements }),
+    ...(credits?.length && { credits }),
+    ...(notes?.length && { notes }),
     ...(tags?.length && { tags }),
   };
 

@@ -16,12 +16,12 @@ function formatList(arr) {
 
 
 function renderTechStack(techStack) {
-  return techStack
-    .map((tech) => {
-      const icon = tech.tool || tech.tech;
-      return `<img src="https://najialjarwan.vercel.app/external-icons/${icon}.svg" height="40" title="${tech.name}" />`;
-    })
-    .join('\n');
+    return techStack
+        .map((tech) => {
+            const icon = tech.tool || tech.tech;
+            return `<img src="https://najialjarwan.vercel.app/external-icons/${icon}.svg" height="40" title="${tech.name}" />`;
+        })
+        .join('\n');
 }
 
 
@@ -89,8 +89,11 @@ export function generateReadmeForProject(project, outputPath) {
 
     // --- Single value placeholders ---
     const placeholders = {
-        name: project.name,
-        title: project.title ?? "Untitled Project",
+        name: project.displayName ?? project.name,
+        title: (project.title ?? "Untitled Project")
+            .split(" ")
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(" "),
         description: project.description ?? "No description provided.",
     };
 
@@ -137,8 +140,15 @@ export function generateReadmeForProject(project, outputPath) {
     );
 
     // --- Determine final path ---
-    const stats = fs.existsSync(outputPath) && fs.statSync(outputPath);
-    const finalPath = stats?.isDirectory() ? path.join(outputPath, "README.md") : outputPath;
+    let finalPath;
+    if (fs.existsSync(outputPath)) {
+        const stats = fs.statSync(outputPath);
+        finalPath = stats.isDirectory()
+            ? path.join(outputPath, "README.md")
+            : outputPath;
+    } else {
+        finalPath = outputPath;
+    }
 
     fs.writeFileSync(finalPath, readme, "utf8");
     console.log(`✅ Generated README for ${project.name} at ${finalPath}`);

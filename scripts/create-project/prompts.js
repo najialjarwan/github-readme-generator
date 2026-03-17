@@ -68,10 +68,10 @@ export const promptProjectData = async () => {
     const displayName = await ask(
       "- Display Name (string - skip if same as name): "
     );
-    
+
     const title = await ask("- Title (string): ");
-    const type = await ask("- Type (university/personal etc...): ");
-    
+    const type = await ask("- Type (university/personal project etc...): ");
+
     let role;
     while (!role) {
       try {
@@ -85,9 +85,29 @@ export const promptProjectData = async () => {
 
     const platform = await ask("- Platform (website/desktop/pwa etc...): ");
 
-    const techStack = parseCommaList(
-      await ask("- Tech Stack (tech names separated by comma - ex: html,css,php): ")
-    );
+    let status;
+    while (!status) {
+      try {
+        const input = await ask("- Status (completed/archived/active): ");
+        validateEnum(input, ["completed", "archived", "active"], "Status");
+        status = input;
+      } catch (err) {
+        console.error(err.message);
+      }
+    }
+
+    const version = await ask("- Version (string - ex: 1.0.0): ");
+
+    let rankInput;
+    while (true) {
+      try {
+        const input = await ask("- Rank (positive integer - above 0): ");
+        rankInput = validateRank(input);
+        break;
+      } catch (err) {
+        console.error(err.message);
+      }
+    }
 
     const duration = await ask("- Duration (string - ex: mar 15 - may 15): ");
 
@@ -116,33 +136,24 @@ export const promptProjectData = async () => {
     }
 
     const description = await ask("- Description (one short sentence): ");
+
+    const motivation = await ask("- Motivation (short paragraph): ");
+
     const thumbnail = await ask("- Thumbnail (path to image): ");
+
+    const techStack = parseCommaList(
+      await ask("- Tech Stack (tech names separated by comma - ex: html,css,php): ")
+    );
+
     const keyFeatures = parseCommaList(await ask("- Key Features (comma separated): "));
-    const challenges = parseCommaList(await ask("- Challenges (comma separated): "));
+
     const futureImprovements = parseCommaList(await ask("- Future Improvements (comma separated): "));
+
+    const credits = parseCommaList(await ask("- Credits (comma separated): "));
+
+    const notes = parseCommaList(await ask("- Notes (comma separated): "));
+
     const tags = parseCommaList(await ask("- Tags (comma separated - ex: fitness,web-app): "));
-
-    let rankInput;
-    while (true) {
-      try {
-        const input = await ask("- Rank (positive integer - above 0): ");
-        rankInput = validateRank(input);
-        break;
-      } catch (err) {
-        console.error(err.message);
-      }
-    }
-
-    let status;
-    while (!status) {
-      try {
-        const input = await ask("- Status (completed/archived/active): ");
-        validateEnum(input, ["completed", "archived", "active"], "Status");
-        status = input;
-      } catch (err) {
-        console.error(err.message);
-      }
-    }
 
     const project = {
       name,
@@ -152,17 +163,20 @@ export const promptProjectData = async () => {
       ...(role && { role }),
       ...(platform && { platform }),
       ...(status && { status }),
+      ...(version && { version }),
       rank: rankInput,
       ...(duration && { duration }),
       ...(liveLink && { liveLink }),
       ...(gitLink && { gitLink }),
       ...(description && { description }),
+      ...(motivation && { motivation }),
       ...(thumbnail && { thumbnail }),
       screenshots: [],
       ...(techStack.length && { techStack }),
       ...(keyFeatures.length && { keyFeatures }),
-      ...(challenges.length && { challenges }),
       ...(futureImprovements.length && { futureImprovements }),
+      ...(credits.length && { credits }),
+      ...(notes.length && { notes }),
       ...(tags.length && { tags }),
     };
 
