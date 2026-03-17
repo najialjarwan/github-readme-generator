@@ -4,7 +4,7 @@
 
 
 <h1 align="center">
-⭐ Github-readme-generator • CLI Tool For Generating Structured GitHub README Files
+⭐ Github README Generator • CLI Tool For Generating Structured GitHub README Files
 </h1>
 
 
