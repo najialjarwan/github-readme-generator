@@ -1,43 +1,162 @@
 import fs from "fs";
+import path from "path";
 import { PROJECTS } from "../../my-portfolio/src/data/readmeExports.js";
 
-const template = fs.readFileSync(
-  "./templates/readme.template.md",
-  "utf8"
-);
+const templatePath = path.resolve("./templates/readme.template.md");
+const template = fs.readFileSync(templatePath, "utf8");
 
-if (!fs.existsSync("./output")) {
-  fs.mkdirSync("./output");
+/**
+ * Format arrays into markdown list, returns null if empty
+ * @param {string[]} arr
+ * @returns {string|null}
+ */
+function formatList(arr) {
+    return arr?.length ? arr.map(i => `- ${i}`).join("\n") : null;
 }
 
-function formatStack(stack) {
-  return stack.map(s => `- ${s.name || s}`).join("\n");
+
+function renderTechStack(techStack) {
+  return techStack
+    .map((tech) => {
+      const icon = tech.tool || tech.tech;
+      return `<img src="https://najialjarwan.vercel.app/external-icons/${icon}.svg" height="40" title="${tech.name}" />`;
+    })
+    .join('\n');
 }
 
-function formatFeatures(details) {
-  if (!details) return "- Feature information not provided";
-  return details.map(d => `- ${d}`).join("\n");
+
+/**
+ * Optional section replacer:
+ * If content is falsy, remove the whole section including header
+ * Otherwise include heading and content
+ * @param {string} readme
+ * @param {string} sectionName
+ * @param {string|null} content
+ * @param {string} heading
+ * @returns {string}
+ */
+function optionalSection(readme, sectionName, content, heading) {
+    const regex = new RegExp(`{{#${sectionName}}}[\\s\\S]*?{{/${sectionName}}}`, "g");
+    if (!content) return readme.replace(regex, ""); // remove entire block
+    return readme.replace(regex, `## ${heading}\n\n${content}`); // render with heading
 }
 
-PROJECTS.forEach(project => {
-  let readme = template;
+/**
+ * Render single placeholders (non-section)
+ */
+function renderPlaceholder(readme, placeholder, value) {
+    if (!value) return readme.replace(new RegExp(`{{${placeholder}}}`, "g"), "");
+    const transformed = value.charAt(0).toUpperCase() + value.slice(1);
+    return readme.replace(new RegExp(`{{${placeholder}}}`, "g"), transformed);
+}
+/**
+ * Generate Project Overview as an HTML table or Markdown table
+ * Always render; only include non-empty properties
+ */
+function formatProjectOverview(project) {
+    const rows = [];
+    const overviewProps = [
+        ["Type", project.type],
+        ["My Role", project.role],
+        ["Platform", project.platform],
+        ["Duration", project.duration],
+        ["Status", project.status],
+        ["Version", project.version],
+        ["Live Demo", project.liveLink ? project.liveLink : "No public live deployment available"]
+    ];
 
-  readme = readme.replace(/{{title}}/g, project.title);
-  readme = readme.replace(/{{description}}/g, project.description);
-  readme = readme.replace(/{{type}}/g, project.type || "");
-  readme = readme.replace(/{{role}}/g, project.role || "");
-  readme = readme.replace(/{{platform}}/g, project.platform || "");
-  readme = readme.replace(/{{duration}}/g, project.duration || "");
+    overviewProps.forEach(([label, value]) => {
+        if (value) {
+            // Markdown table row
+            rows.push(`| ${label} | ${value} |`);
+        }
+    });
 
-  readme = readme.replace(/{{stack}}/g, formatStack(project.stack || []));
-  readme = readme.replace(/{{features}}/g, formatFeatures(project.details));
+    const htmlRows = overviewProps
+        .filter(([_, value]) => value)
+        .map(([label, value]) => `<tr><td>${label}</td><td>${value}</td></tr>`)
+        .join("\n");
+    return `<table>\n${htmlRows}\n</table>`;
+}
 
-  readme = readme.replace(/{{gitLink}}/g, project.gitLink || "");
-  readme = readme.replace(/{{liveLink}}/g, project.liveLink || "");
+/**
+ * Generate README for a single project
+ * @param {object} project
+ * @param {string} outputPath
+ */
+export function generateReadmeForProject(project, outputPath) {
+    let readme = template;
 
-  const outputPath = `./output/${project.name}-README.md`;
+    // --- Single value placeholders ---
+    const placeholders = {
+        name: project.name,
+        title: project.title ?? "Untitled Project",
+        description: project.description ?? "No description provided.",
+    };
 
-  fs.writeFileSync(outputPath, readme);
+    for (const [key, value] of Object.entries(placeholders)) {
+        readme = renderPlaceholder(readme, key, value);
+    }
 
-  console.log(`Generated README for ${project.name}`);
-});
+    // --- Optional sections ---
+    readme = renderPlaceholder(
+        readme,
+        "techStack",
+        renderTechStack(project.techStack)
+    );
+    readme = renderPlaceholder(readme, "projectOverview", formatProjectOverview(project));
+    readme = optionalSection(
+        readme,
+        "motivationSection",
+        project.motivation,
+        "💡 Problem / Motivation"
+    );
+    readme = optionalSection(
+        readme,
+        "featuresSection",
+        formatList(project.keyFeatures),
+        "✨ Key Features"
+    );
+    readme = optionalSection(
+        readme,
+        "futureImprovementsSection",
+        formatList(project.futureImprovements),
+        "🚀 Future Improvements"
+    );
+    readme = optionalSection(
+        readme,
+        "creditsSection",
+        formatList(project.credits),
+        "🎨 Credits & Inspirations"
+    );
+    readme = optionalSection(
+        readme,
+        "noteSection",
+        formatList(project.notes),
+        "📝 Notes"
+    );
+
+    // --- Determine final path ---
+    const stats = fs.existsSync(outputPath) && fs.statSync(outputPath);
+    const finalPath = stats?.isDirectory() ? path.join(outputPath, "README.md") : outputPath;
+
+    fs.writeFileSync(finalPath, readme, "utf8");
+    console.log(`✅ Generated README for ${project.name} at ${finalPath}`);
+}
+
+/**
+ * Generate all READMEs in a directory
+ * @param {string} outputDir
+ */
+export function generateAllReadmes(outputDir = "./output") {
+    if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
+    PROJECTS.forEach(project => {
+        const outputPath = path.join(outputDir, `${project.name}-README.md`);
+        generateReadmeForProject(project, outputPath);
+    });
+}
+
+// Auto-run if executed directly
+if (process.argv[1].includes("generate-readmes.js")) {
+    generateAllReadmes();
+}

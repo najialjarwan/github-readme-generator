@@ -1,34 +1,91 @@
-# {{title}}
+<div align="center">
+  <img src="" width="200">
+</div>
 
-{{description}}
 
----
+<h1 align="center">
+⭐ {{name}} • {{title}}
+</h1>
 
-## Project Information
 
-| Property | Value |
-|--------|------|
-| Type | {{type}} |
-| Role | {{role}} |
-| Platform | {{platform}} |
-| Development Period | {{duration}} |
+> {{description}}
+
 
 ---
 
-## Tech Stack
+## 📸 Showcase
+<div align="center">
+  <!-- <img src="" width="800" title="*Name* Quick Look" alt="*NAME* GIF screenshots showcase" /> -->
+  Showcase coming soon... 📸
+</div>
 
-{{stack}}
 
----
+## 🔷 Project Overview
+{{projectOverview}}
 
-## Key Features
 
+## ⚙️ Tech Stack & Tools
+<p>
+  {{techStack}}
+</p>
+
+<table>
+  <tr>
+    <td><strong>Frontend</strong></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Backend</strong></td>
+    <td><strong>⚠️ No Backend at the moment</strong></td>
+  </tr>
+  <tr>
+    <td><strong>Database</strong></td>
+    <td><strong>⚠️ No Database at the moment</strong></td>
+  </tr>
+  <tr>
+    <td><strong>Hosting</strong></td>
+    <td><strong>⚠️ Not hosted at the moment</strong></td>
+  </tr>
+    <tr>
+    <td><strong>Tools</strong></td>
+    <td></td>
+  </tr>
+</table>
+
+
+{{#motivationSection}}
+## 💡 Problem / Motivation
+{{motivation}}
+{{/motivationSection}}
+
+
+{{#featuresSection}}
+## ✨ Key Features
 {{features}}
+{{/featuresSection}}
+
+
+{{#futureImprovementsSection}}
+## 🚀 Future Improvements
+{{futureImprovements}}
+{{/futureImprovementsSection}}
+
+
+{{#creditsSection}}
+## 🎨 Credits & Inspirations
+{{credits}}
+{{/creditsSection}}
+
+
+{{#noteSection}}
+## 📝 Notes
+{{note}}
+{{/noteSection}}
+
 
 ---
 
-## Repository
 
-{{gitLink}}
-
-{{liveLink}}
+<p align="center">
+  <em>This README was automatically generated using a custom README generator</em> ✨
+</p>
