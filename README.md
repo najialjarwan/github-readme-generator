@@ -4,7 +4,7 @@
 
 
 <h1 align="center">
-⭐ Github README Generator • CLI Tool For Generating Structured GitHub README Files
+⭐ <i>Github README Generator</i> • CLI Tool For Generating Structured GitHub README Files
 </h1>
 
 
@@ -15,7 +15,7 @@
 
 ## 📸 Showcase
 <div align="center">
-  <!-- <img src="" width="100%" title="*Name* Quick Look" alt="*NAME* GIF screenshots showcase" /> -->
+  <!-- <img src="" width="800" title="*Name* Quick Look" alt="*NAME* GIF screenshots showcase" /> -->
   Showcase coming soon... 📸
 </div>
 
@@ -36,22 +36,10 @@
 
 <table>
   <tr>
-    <td><strong>Frontend</strong></td>
-    <td><strong>No Frontend</strong></td>
-  </tr>
-  <tr>
-    <td><strong>Backend</strong></td>
+    <td><strong>Runtime</strong></td>
     <td>
-      <img src="https://najialjarwan.vercel.app/external-icons/javascript.svg" height="40" title="JavaScript (ES6+)" />
+      <img src="https://najialjarwan.vercel.app/external-icons/nodejs.svg" height="40" title="Node JS" />
     </td>
-  </tr>
-  <tr>
-    <td><strong>Database</strong></td>
-    <td><strong>No Database</strong></td>
-  </tr>
-  <tr>
-    <td><strong>Hosting</strong></td>
-    <td><strong>Not hosted</strong></td>
   </tr>
     <tr>
     <td><strong>Tools</strong></td>
@@ -96,9 +84,7 @@ This project was built to solve the repetitive and unstructured process of writi
 ## 📝 Notes
 
 - This project reflects a shift toward building developer tools rather than just applications.
-- Focus was placed on code structure
-- scalability
-- and maintainability rather than UI.
+- Focus was placed on code structure, scalability, and maintainability rather than UI.
 - Serves as a foundation for future tooling and automation-focused projects.
 
 
