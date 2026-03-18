@@ -8,8 +8,38 @@ const rl = readline.createInterface({
 
 const ask = (q) => new Promise((resolve) => rl.question(q, resolve));
 
-const parseCommaList = (input) =>
-  input ? input.split(",").map((s) => s.trim()).filter(Boolean) : [];
+const parseCommaList = (input) => {
+  if (!input) return [];
+
+  // ✅ Already an array → return as-is
+  if (Array.isArray(input)) return input;
+
+  // ✅ String → split
+  return input
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+};
+
+const askMultiline = (prompt) => {
+  return new Promise((resolve) => {
+    console.log(prompt);
+    console.log("(Press ENTER on empty line to finish)\n");
+
+    const lines = [];
+
+    const onLine = (input) => {
+      if (!input.trim()) {
+        rl.removeListener("line", onLine);
+        resolve(lines);
+      } else {
+        lines.push(input.trim());
+      }
+    };
+
+    rl.on("line", onLine);
+  });
+};
 
 /* ---------------- Validators ---------------- */
 
@@ -145,13 +175,13 @@ export const promptProjectData = async () => {
       await ask("- Tech Stack (tech names separated by comma - ex: html,css,php): ")
     );
 
-    const keyFeatures = parseCommaList(await ask("- Key Features (comma separated): "));
+    const keyFeatures = await askMultiline("- Key Features: ");
 
-    const futureImprovements = parseCommaList(await ask("- Future Improvements (comma separated): "));
+    const futureImprovements = await askMultiline("- Future Improvements: ");
 
-    const credits = parseCommaList(await ask("- Credits (comma separated): "));
+    const credits = await askMultiline("- Credits: ");
 
-    const notes = parseCommaList(await ask("- Notes (comma separated): "));
+    const notes = await askMultiline("- Notes: ");
 
     const tags = parseCommaList(await ask("- Tags (comma separated - ex: fitness,web-app): "));
 

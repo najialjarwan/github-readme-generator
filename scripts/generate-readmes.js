@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { PROJECTS } from "../../my-portfolio/src/data/readmeExports.js";
+import { TECHS_BY_TECH } from "../../my-portfolio/src/data/readmeExports.js";
 
 const templatePath = path.resolve("./templates/readme.template.md");
 const template = fs.readFileSync(templatePath, "utf8");
@@ -101,11 +102,19 @@ export function generateReadmeForProject(project, outputPath) {
         readme = renderPlaceholder(readme, key, value);
     }
 
+    const resolvedTechStack = project.techStack?.map((tech) => {
+        if (typeof tech === "string") {
+            const key = tech.replace("TECHS_BY_TECH.", "");
+            return TECHS_BY_TECH[key];
+        }
+        return tech;
+    });
+
     // --- Optional sections ---
     readme = renderPlaceholder(
         readme,
         "techStack",
-        renderTechStack(project.techStack)
+        renderTechStack(resolvedTechStack)
     );
     readme = renderPlaceholder(readme, "projectOverview", formatProjectOverview(project));
     readme = optionalSection(
