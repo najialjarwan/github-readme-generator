@@ -36,15 +36,15 @@
   </tr>
   <tr>
     <td><strong>Backend</strong></td>
-    <td><strong>⚠️ No Backend at the moment</strong></td>
+    <td></td>
   </tr>
   <tr>
     <td><strong>Database</strong></td>
-    <td><strong>⚠️ No Database at the moment</strong></td>
+    <td></td>
   </tr>
   <tr>
     <td><strong>Hosting</strong></td>
-    <td><strong>⚠️ Not hosted at the moment</strong></td>
+    <td></td>
   </tr>
     <tr>
     <td><strong>Tools</strong></td>
