@@ -28,7 +28,6 @@
 <tr><td>Duration</td><td>mar 13 - mar 17</td></tr>
 <tr><td>Status</td><td>completed</td></tr>
 <tr><td>Version</td><td>1.0.0</td></tr>
-<tr><td>Live Demo</td><td>No public live deployment available</td></tr>
 </table>
 
 
