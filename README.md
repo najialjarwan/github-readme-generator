@@ -21,7 +21,7 @@
 
 
 ## 🔷 Project Overview
-<table>
+<table align="center">
 <tr><td>Type</td><td>personal project</td></tr>
 <tr><td>My Role</td><td>full-stack</td></tr>
 <tr><td>Platform</td><td>cli</td></tr>
@@ -34,15 +34,15 @@
 
 ## ⚙️ Tech Stack & Tools
 
-<table>
+<table align="center">
   <tr>
     <td><strong>Runtime</strong></td>
-    <td>
-      <img src="https://najialjarwan.vercel.app/external-icons/nodejs.svg" height="40" title="Node JS" />
-    </td>
-  </tr>
-    <tr>
     <td><strong>Tools</strong></td>
+  </tr>
+  <tr>
+    <td>
+      &nbsp;&nbsp;<img src="https://najialjarwan.vercel.app/external-icons/nodejs.svg" height="40" title="Node JS" />
+    </td>
     <td>
       <img src="https://najialjarwan.vercel.app/external-icons/vscode.svg" height="40" title="VS Code" />
       <img src="https://najialjarwan.vercel.app/external-icons/git.svg" height="40" title="Git" />
