@@ -77,7 +77,7 @@ function formatProjectOverview(project) {
         .filter(([_, value]) => value)
         .map(([label, value]) => `<tr><td>${label}</td><td>${value}</td></tr>`)
         .join("\n");
-    return `<table>\n${htmlRows}\n</table>`;
+    return `<table align="center">\n${htmlRows}\n</table>`;
 }
 
 /**
