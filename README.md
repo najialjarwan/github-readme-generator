@@ -77,7 +77,7 @@ This project was built to solve the repetitive and unstructured process of writi
 
 ## 🎨 Credits & Inspirations
 
-- Built and designed بالكامل independently
+- Built and designed fully independently
 - Inspired by the need for structured documentation and reusable workflows
 
 
@@ -85,7 +85,7 @@ This project was built to solve the repetitive and unstructured process of writi
 
 - This project reflects a shift toward building developer tools rather than just applications.
 - Focus was placed on code structure, scalability, and maintainability rather than UI.
-- Serves as a foundation for future tooling and automation-focused projects.
+- Serves as a foundation for future tooling and automation-focused of my personal projects.
 
 
 ---
