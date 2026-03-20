@@ -24,31 +24,35 @@
 {{projectOverview}}
 
 
-## ⚙️ Tech Stack & Tools
+## 🛠️ Tech Stack & Tools
 <p>
   {{techStack}}
 </p>
 
-<table>
+<table align="center">
   <tr>
     <td><strong>Frontend</strong></td>
-    <td></td>
-  </tr>
-  <tr>
     <td><strong>Backend</strong></td>
-    <td></td>
-  </tr>
-  <tr>
     <td><strong>Database</strong></td>
-    <td></td>
+    <td><strong>Hosting</strong></td>
+    <td><strong>Tools</strong></td>
   </tr>
   <tr>
-    <td><strong>Hosting</strong></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td><strong>Tools</strong></td>
-    <td></td>
+    <td>
+    .
+    </td>
+    <td>
+    .
+    </td>
+    <td>
+    .
+    </td>
+    <td>
+    .
+    </td>
+    <td>
+    .
+    </td>
   </tr>
 </table>
 
