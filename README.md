@@ -53,7 +53,7 @@
 
 ## 💡 Problem / Motivation
 
-This project was built to solve the repetitive and unstructured process of writing README files for projects. Instead of manually formatting markdown every time, I designed a system that standardizes README structure and enforces consistency across projects. It also reflects my focus on developer experience, automation, and clean architecture by turning a common workflow into a reusable tool.
+This project was built to solve the repetitive and unstructured process of writing README files for my projects. Instead of manually formatting markdown every time, I designed a system that standardizes README structure and enforces consistency across projects. It also reflects my focus on developer experience, automation, and clean architecture by turning a common workflow into a reusable tool.
 
 
 ## ✨ Key Features
