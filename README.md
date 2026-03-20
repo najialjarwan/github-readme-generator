@@ -8,7 +8,7 @@
 </h1>
 
 
-> A command-line tool that automates the creation of clean, structured, and visually consistent GitHub README files through an interactive prompt-based workflow.
+> A CLI-based tool that automates documentation for my personal portfolio projects. It collects project data via prompts, injects it into my structured project.js file, and generates polished README files for individual or all projects, including automatic ranking and consistent formatting.
 
 
 ---
@@ -53,17 +53,18 @@
 
 ## 💡 Problem / Motivation
 
-This project was built to solve the repetitive and unstructured process of writing README files for my projects. Instead of manually formatting markdown every time, I designed a system that standardizes README structure and enforces consistency across projects. It also reflects my focus on developer experience, automation, and clean architecture by turning a common workflow into a reusable tool.
+Maintaining consistent README files for my portfolio existing and new projects was repetitive and error-prone. I created this tool to automate documentation for my personal workflow. While it’s tailored to my data structure and project organization, it reflects my focus on automation, clean architecture, and developer-focused tooling.
 
 
 ## ✨ Key Features
 
-- Interactive CLI workflow using prompts to dynamically collect project data
-- Automated generation of structured README files with consistent formatting and sections
-- Custom formatting engine to handle nested objects, arrays, and clean output rendering
-- Separation of concerns between data collection, formatting logic, and file generation
-- Scalable architecture allowing easy extension of sections, templates, and formatting rules
-- Improves developer productivity by eliminating repetitive README writing tasks
+- Interactive CLI workflow to collect project data and inject it into project.js (source of truth)
+- Automatic project ranking and ordering when inserting new projects
+- Generates README files directly in project folders for single projects
+- Batch generation for all projects using project.js as source
+- Custom formatting engine to handle nested objects, arrays, and maintain consistent markdown
+- Separation of concerns: data collection, data storage, and README generation
+- Scalable architecture for adding templates, sections, badges, and other formatting options
 
 
 ## 🚀 Future Improvements
