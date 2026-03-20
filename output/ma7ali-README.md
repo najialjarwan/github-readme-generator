@@ -4,7 +4,7 @@
 
 
 <h1 align="center">
-⭐ Ma7ali • POS PWA for small businesses
+⭐ <i>Ma7ali</i> • POS PWA For Managing Small Businesses
 </h1>
 
 
@@ -21,7 +21,7 @@
 
 
 ## 🔷 Project Overview
-<table>
+<table align="center">
 <tr><td>Type</td><td>university project</td></tr>
 <tr><td>My Role</td><td>full-stack</td></tr>
 <tr><td>Platform</td><td>PWA</td></tr>
@@ -32,7 +32,7 @@
 </table>
 
 
-## ⚙️ Tech Stack & Tools
+## 🛠️ Tech Stack & Tools
 <p>
   <img src="https://najialjarwan.vercel.app/external-icons/html.svg" height="40" title="HTML5" />
 <img src="https://najialjarwan.vercel.app/external-icons/css.svg" height="40" title="CSS3" />
@@ -42,26 +42,30 @@
 <img src="https://najialjarwan.vercel.app/external-icons/git.svg" height="40" title="Git" />
 </p>
 
-<table>
+<table align="center">
   <tr>
     <td><strong>Frontend</strong></td>
-    <td></td>
-  </tr>
-  <tr>
     <td><strong>Backend</strong></td>
-    <td><strong>⚠️ No Backend at the moment</strong></td>
-  </tr>
-  <tr>
     <td><strong>Database</strong></td>
-    <td><strong>⚠️ No Database at the moment</strong></td>
+    <td><strong>Hosting</strong></td>
+    <td><strong>Tools</strong></td>
   </tr>
   <tr>
-    <td><strong>Hosting</strong></td>
-    <td><strong>⚠️ Not hosted at the moment</strong></td>
-  </tr>
-    <tr>
-    <td><strong>Tools</strong></td>
-    <td></td>
+    <td>
+    .
+    </td>
+    <td>
+    .
+    </td>
+    <td>
+    .
+    </td>
+    <td>
+    .
+    </td>
+    <td>
+    .
+    </td>
   </tr>
 </table>
 

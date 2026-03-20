@@ -4,7 +4,7 @@
 
 
 <h1 align="center">
-⭐ Fitnesso • Simple fitness tracking website
+⭐ <i>Fitnesso</i> • Simple Fitness Tracking Website
 </h1>
 
 
@@ -21,18 +21,18 @@
 
 
 ## 🔷 Project Overview
-<table>
+<table align="center">
 <tr><td>Type</td><td>university project</td></tr>
 <tr><td>My Role</td><td>full-stack</td></tr>
 <tr><td>Platform</td><td>website</td></tr>
 <tr><td>Duration</td><td>spring 2024 & fall 2024</td></tr>
 <tr><td>Status</td><td>completed</td></tr>
 <tr><td>Version</td><td>1.0.0</td></tr>
-<tr><td>Live Demo</td><td>https://fitnesso.ct.ws/</td></tr>
+<tr><td>Live Demo</td><td>https://fitnesso.ct.ws</td></tr>
 </table>
 
 
-## ⚙️ Tech Stack & Tools
+## 🛠️ Tech Stack & Tools
 <p>
   <img src="https://najialjarwan.vercel.app/external-icons/html.svg" height="40" title="HTML5" />
 <img src="https://najialjarwan.vercel.app/external-icons/css.svg" height="40" title="CSS3" />
@@ -43,26 +43,30 @@
 <img src="https://najialjarwan.vercel.app/external-icons/vscode.svg" height="40" title="VS Code" />
 </p>
 
-<table>
+<table align="center">
   <tr>
     <td><strong>Frontend</strong></td>
-    <td></td>
-  </tr>
-  <tr>
     <td><strong>Backend</strong></td>
-    <td><strong>⚠️ No Backend at the moment</strong></td>
-  </tr>
-  <tr>
     <td><strong>Database</strong></td>
-    <td><strong>⚠️ No Database at the moment</strong></td>
+    <td><strong>Hosting</strong></td>
+    <td><strong>Tools</strong></td>
   </tr>
   <tr>
-    <td><strong>Hosting</strong></td>
-    <td><strong>⚠️ Not hosted at the moment</strong></td>
-  </tr>
-    <tr>
-    <td><strong>Tools</strong></td>
-    <td></td>
+    <td>
+    .
+    </td>
+    <td>
+    .
+    </td>
+    <td>
+    .
+    </td>
+    <td>
+    .
+    </td>
+    <td>
+    .
+    </td>
   </tr>
 </table>
 

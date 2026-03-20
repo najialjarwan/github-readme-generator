@@ -4,7 +4,7 @@
 
 
 <h1 align="center">
-⭐ Quizo • Desktop quiz application
+⭐ <i>Quizo</i> • Simple Quiz Desktop Application
 </h1>
 
 
@@ -21,7 +21,7 @@
 
 
 ## 🔷 Project Overview
-<table>
+<table align="center">
 <tr><td>Type</td><td>university project</td></tr>
 <tr><td>My Role</td><td>full-stack</td></tr>
 <tr><td>Platform</td><td>desktop app</td></tr>
@@ -32,32 +32,36 @@
 </table>
 
 
-## ⚙️ Tech Stack & Tools
+## 🛠️ Tech Stack & Tools
 <p>
   <img src="https://najialjarwan.vercel.app/external-icons/csharp.svg" height="40" title="CSharp" />
 <img src="https://najialjarwan.vercel.app/external-icons/visualstudio.svg" height="40" title="Visual Studio" />
 </p>
 
-<table>
+<table align="center">
   <tr>
     <td><strong>Frontend</strong></td>
-    <td></td>
-  </tr>
-  <tr>
     <td><strong>Backend</strong></td>
-    <td><strong>⚠️ No Backend at the moment</strong></td>
-  </tr>
-  <tr>
     <td><strong>Database</strong></td>
-    <td><strong>⚠️ No Database at the moment</strong></td>
+    <td><strong>Hosting</strong></td>
+    <td><strong>Tools</strong></td>
   </tr>
   <tr>
-    <td><strong>Hosting</strong></td>
-    <td><strong>⚠️ Not hosted at the moment</strong></td>
-  </tr>
-    <tr>
-    <td><strong>Tools</strong></td>
-    <td></td>
+    <td>
+    .
+    </td>
+    <td>
+    .
+    </td>
+    <td>
+    .
+    </td>
+    <td>
+    .
+    </td>
+    <td>
+    .
+    </td>
   </tr>
 </table>
 
