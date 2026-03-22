@@ -50,6 +50,20 @@ function renderPlaceholder(readme, placeholder, value) {
     const transformed = value.charAt(0).toUpperCase() + value.slice(1);
     return readme.replace(new RegExp(`{{${placeholder}}}`, "g"), transformed);
 }
+
+function capitalizeWords(str) {
+  if (typeof str !== "string") return str; // safeguard for non-string values
+  return str
+    .split(" ")
+    .map(word => {
+      // leave empty strings alone
+      if (!word) return word;
+      // uppercase first letter, keep the rest as-is
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+}
+
 /**
  * Generate Project Overview as an HTML table or Markdown table
  * Always render; only include non-empty properties
@@ -57,13 +71,12 @@ function renderPlaceholder(readme, placeholder, value) {
 function formatProjectOverview(project) {
     const rows = [];
     const overviewProps = [
-        ["Type", project.type],
-        ["My Role", project.role],
-        ["Platform", project.platform],
-        ["Duration", project.duration],
-        ["Status", project.status],
+        ["Type", capitalizeWords(project.type)],
+        ["My Role", capitalizeWords(project.role)],
+        ["Platform", capitalizeWords(project.platform)],
+        ["Duration", capitalizeWords(project.duration)],
+        ["Status", capitalizeWords(project.status)],
         ["Version", project.version],
-        ["Live Demo", project.liveLink ? project.liveLink : "No public live deployment available"]
     ];
 
     overviewProps.forEach(([label, value]) => {
