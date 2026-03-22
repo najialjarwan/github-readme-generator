@@ -128,11 +128,18 @@ export const promptProjectData = async () => {
 
     const version = await ask("- Version (string - ex: 1.0.0): ");
 
+    const maxRank = PROJECTS.length + 1;
     let rankInput;
     while (true) {
       try {
-        const input = await ask("- Rank (positive integer - above 0): ");
-        rankInput = validateRank(input);
+        const input = await ask(`- Rank (1-${maxRank}): `);
+        const num = validateRank(input);
+
+        if (num > maxRank) {
+          throw new Error(`Rank cannot exceed ${maxRank}.`);
+        }
+
+        rankInput = num;
         break;
       } catch (err) {
         console.error(err.message);
