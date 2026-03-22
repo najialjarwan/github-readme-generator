@@ -13,22 +13,39 @@
 
 ---
 
+
 ## 📸 Showcase
 <div align="center">
-  <!-- <img src="" width="800" title="*Name* Quick Look" alt="*NAME* GIF screenshots showcase" /> -->
-  Showcase coming soon... 📸
+  Showcase coming soon...
 </div>
+
+<!-- ### Overview
+<div align="center">
+  <img src="public/demo/preview.gif" width="100%" alt="Website Overview"/>
+</div>
+
+### Live Demo
+👉 https://najialjarwan.vercel.app
+
+### Key Interaction
+<div align="center">
+  <img src="public/demo/journey.gif" width="100%" alt="Key Interaction"/>
+</div>
+
+### Responsive Design
+<div align="center">
+  <img src="public/demo/responsive.gif" width="100%" alt="Responsive Desing"/>
+</div> -->
 
 
 ## 🔷 Project Overview
 <table align="center">
-<tr><td>Type</td><td>university project</td></tr>
-<tr><td>My Role</td><td>full-stack</td></tr>
-<tr><td>Platform</td><td>website</td></tr>
-<tr><td>Duration</td><td>spring 2024 & fall 2024</td></tr>
-<tr><td>Status</td><td>completed</td></tr>
+<tr><td>Type</td><td>University Project</td></tr>
+<tr><td>My Role</td><td>Full-stack</td></tr>
+<tr><td>Platform</td><td>Website</td></tr>
+<tr><td>Duration</td><td>Spring 2024 & Fall 2024</td></tr>
+<tr><td>Status</td><td>Completed</td></tr>
 <tr><td>Version</td><td>1.0.0</td></tr>
-<tr><td>Live Demo</td><td>https://fitnesso.ct.ws</td></tr>
 </table>
 
 
@@ -69,6 +86,9 @@
     </td>
   </tr>
 </table>
+
+
+## 🗂️ Project Structure
 
 
 ## 💡 Problem / Motivation

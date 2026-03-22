@@ -13,22 +13,39 @@
 
 ---
 
+
 ## 📸 Showcase
 <div align="center">
-  <!-- <img src="" width="800" title="*Name* Quick Look" alt="*NAME* GIF screenshots showcase" /> -->
-  Showcase coming soon... 📸
+  Showcase coming soon...
 </div>
+
+<!-- ### Overview
+<div align="center">
+  <img src="public/demo/preview.gif" width="100%" alt="Website Overview"/>
+</div>
+
+### Live Demo
+👉 https://najialjarwan.vercel.app
+
+### Key Interaction
+<div align="center">
+  <img src="public/demo/journey.gif" width="100%" alt="Key Interaction"/>
+</div>
+
+### Responsive Design
+<div align="center">
+  <img src="public/demo/responsive.gif" width="100%" alt="Responsive Desing"/>
+</div> -->
 
 
 ## 🔷 Project Overview
 <table align="center">
-<tr><td>Type</td><td>personal project</td></tr>
-<tr><td>My Role</td><td>tool</td></tr>
-<tr><td>Platform</td><td>cli</td></tr>
-<tr><td>Duration</td><td>mar 13 - mar 17</td></tr>
-<tr><td>Status</td><td>completed</td></tr>
+<tr><td>Type</td><td>Personal Project</td></tr>
+<tr><td>My Role</td><td>Tool</td></tr>
+<tr><td>Platform</td><td>Cli</td></tr>
+<tr><td>Duration</td><td>Mar 13 - Mar 17</td></tr>
+<tr><td>Status</td><td>Completed</td></tr>
 <tr><td>Version</td><td>1.0.0</td></tr>
-<tr><td>Live Demo</td><td>No public live deployment available</td></tr>
 </table>
 
 
@@ -65,6 +82,9 @@
     </td>
   </tr>
 </table>
+
+
+## 🗂️ Project Structure
 
 
 ## 💡 Problem / Motivation
