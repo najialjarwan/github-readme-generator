@@ -14,11 +14,23 @@
 ---
 
 ## 📸 Showcase
-### Overview
-#### Generate READEME.md for all projects
+### Batch README Generation
 <div align="center">
-  <img src="preview.gif" width="100%" alt="Tool Overview"/>
+  <img src="batch-generation.gif" width="100%" alt="Batch generation of README files"/>
 </div>
+
+### Interactive Single Project Generation
+<div align="center">
+  <img src="single-project.gif" width="100%" alt="Interactive single project README generation"/>
+</div>
+
+### Usage
+```bash
+# Generate READMEs for all projects
+node scripts/generate-readmes.js
+
+# Create README for a single project interactively
+node scripts/createProject.js
 
 
 ## 🔷 Project Overview
