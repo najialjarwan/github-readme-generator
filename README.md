@@ -31,6 +31,7 @@ node scripts/generate-readmes.js
 
 # Create README for a single project interactively
 node scripts/createProject.js
+```
 
 
 ## 🔷 Project Overview
