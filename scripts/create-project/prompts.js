@@ -105,8 +105,8 @@ export const promptProjectData = async () => {
     let role;
     while (!role) {
       try {
-        const input = await ask("- Role (front-end/back-end/full-stack): ");
-        validateEnum(input, ["front-end", "back-end", "full-stack"], "Role");
+        const input = await ask("- Role (front-end/back-end/full-stack/tool): ");
+        validateEnum(input, ["front-end", "back-end", "full-stack", "tool"], "Role");
         role = input;
       } catch (err) {
         console.error(err.message);

@@ -15,8 +15,8 @@ function formatList(arr) {
     return arr?.length ? arr.map(i => `- ${i}`).join("\n") : null;
 }
 
-
 function renderTechStack(techStack) {
+    if(!techStack) return;
     return techStack
         .map((tech) => {
             const icon = tech.tool || tech.tech;
